@@ -27,9 +27,7 @@ const categoryCtrl = {
                     return res.status(503).send({message: err.message})
                 }
             })
-
             const category = await Category.create({title, image: nameImage});
-
             res.status(201).send({message: 'Category added successfully', category});
         } catch (error) {
             res.status(503).send({message: error.message})
