@@ -11,6 +11,7 @@ const fs = require('fs');
 const SECRET_KEY = "Top@lm|san";
 
 const uploadsDir = path.join(__dirname, "../", "files");
+
 const categoryCtrl = {
     add: async (req, res) => {
         try {
@@ -27,7 +28,9 @@ const categoryCtrl = {
                     return res.status(503).send({message: err.message})
                 }
             })
+
             const category = await Category.create({title, image: nameImage});
+
             res.status(201).send({message: 'Category added successfully', category});
         } catch (error) {
             res.status(503).send({message: error.message})
