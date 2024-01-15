@@ -11,7 +11,6 @@ const fs = require('fs');
 const SECRET_KEY = "Top@lm|san";
 
 const uploadsDir = path.join(__dirname, "../", "files");
-
 const categoryCtrl = {
     add: async (req, res) => {
         try {
